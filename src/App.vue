@@ -5,14 +5,18 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125">
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">
+          Home
+        </RouterLink>
+        <RouterLink to="/about">
+          About
+        </RouterLink>
       </nav>
     </div>
   </header>
@@ -21,7 +25,7 @@ import HelloWorld from './components/HelloWorld.vue'
   <div id="banner-3" className="min-h-screen bg-neutral-950 z-10 fixed top-0 left-2/4 w-1/4" />
   <div id="banner-4" className="min-h-screen bg-neutral-950 z-10 fixed top-0 left-3/4 w-1/4" />
 
-  <router-view />
+  <RouterView />
 </template>
 
 <style scoped>

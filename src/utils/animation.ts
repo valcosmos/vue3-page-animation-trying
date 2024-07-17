@@ -1,7 +1,7 @@
-import type { NavigationGuardNext } from "vue-router"
+import type { NavigationGuardNext } from 'vue-router'
 import gsap from 'gsap'
 
-export const animatePageIn = () => {
+export function animatePageIn() {
   const bannerOne = document.getElementById('banner-1')
   const bannerTwo = document.getElementById('banner-2')
   const bannerThree = document.getElementById('banner-3')
@@ -11,7 +11,7 @@ export const animatePageIn = () => {
     const tl = gsap.timeline()
 
     tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
-      yPercent: 0
+      yPercent: 0,
     }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
       yPercent: 100,
       stagger: 0.2,
@@ -19,7 +19,7 @@ export const animatePageIn = () => {
   }
 }
 
-export const animatePageOut = (next: NavigationGuardNext) => {
+export function animatePageOut(next: NavigationGuardNext) {
   const bannerOne = document.getElementById('banner-1')
   const bannerTwo = document.getElementById('banner-2')
   const bannerThree = document.getElementById('banner-3')
@@ -27,14 +27,14 @@ export const animatePageOut = (next: NavigationGuardNext) => {
   if (bannerOne && bannerTwo && bannerThree && bannerFour) {
     const tl = gsap.timeline()
     tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
-      yPercent: -100
+      yPercent: -100,
     }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
       yPercent: 0,
       stagger: 0.2,
       onComplete: () => {
         next()
         animatePageIn()
-      }
+      },
     })
   }
 }
